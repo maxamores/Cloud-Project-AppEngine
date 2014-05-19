@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+  <servlet>
+    <servlet-name>UploadPic</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.UploadPic</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ServePic</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.ServePic</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>Gallery</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.Gallery</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.Search</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Picture</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.Picture</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>TagGallery</servlet-name>
+    <servlet-class>com.eamores.cloud.ae.servlet.TagGallery</servlet-class>
+  </servlet>
+  
+  
+ 
+  <servlet-mapping>
+    <servlet-name>UploadPic</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ServePic</servlet-name>
+    <url-pattern>/serve</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>Gallery</servlet-name>
+    <url-pattern>/gallery</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>Search</servlet-name>
+    <url-pattern>/tags</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Picture</servlet-name>
+    <url-pattern>/photo</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>TagGallery</servlet-name>
+    <url-pattern>/taggallery</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
