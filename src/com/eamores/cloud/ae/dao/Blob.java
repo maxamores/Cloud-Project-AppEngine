@@ -81,7 +81,7 @@ public class Blob {
 	public static PicSummary getPics(String blob_key){
 		PicSummary pics = null;
 		
-		String query = "SELECT google_url, amazon_url FROM Blobs WHERE blob_key = '" + blob_key + "'";
+		String query = "SELECT DISTINCT google_url, amazon_url FROM Blobs WHERE blob_key = '" + blob_key + "'";
 		
 		try {
 			conn = new ConnectionManager();
@@ -102,7 +102,7 @@ public class Blob {
 		}
 		
 		
-		query = "SELECT tag FROM Tags WHERE blob_key = '" + blob_key + "'";
+		query = "SELECT DISTINCT tag FROM Tags WHERE blob_key = '" + blob_key + "'";
 		
 		try {
 			conn = new ConnectionManager();

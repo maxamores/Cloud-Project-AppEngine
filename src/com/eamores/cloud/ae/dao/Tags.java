@@ -18,7 +18,7 @@ public class Tags {
 	public static ArrayList<TotalTags> getTags(String uid){
 		ArrayList<TotalTags> tags = new ArrayList<TotalTags>();
 		
-		String query = "SELECT tag, count(tag) as total FROM Tags WHERE user_id = '" + uid + "' group by tag";
+		String query = "SELECT DISTINCT tag, count(tag) as total FROM Tags WHERE user_id = '" + uid + "' group by tag";
 		
 		
 		//Select   from Tags group by tag
@@ -57,9 +57,8 @@ public class Tags {
 		
 		//select Blobs.user_id as user_id, Blobs.blob_key as blob_key, google_url, amazon_url from Blobs, Tags where Blobs.blob_key = Tags.blob_key and Tags.user_id ='104527062163568148406' and tag='Face';
 		
-		String query = "SELECT Blobs.user_id as user_id, Blobs.blob_key as blob_key, google_url, amazon_url, ts "
-				+ " FROM Blobs, Tags WHERE Blobs.blob_key = Tags.blob_key and Tags.user_id = '" + uid + "' and tag='" + tag + "'";
-		
+		String query = "SELECT DISTINCT Blobs.user_id as user_id, Blobs.blob_key as blob_key, google_url, amazon_url, ts "
+				+ " FROM Blobs, Tags WHERE Blobs.blob_key = Tags.blob_key and Tags.user_id = '" + uid + "' and tag='" + tag + "'";		
 				
 		try {
 			conn = new ConnectionManager();
